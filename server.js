@@ -6,17 +6,9 @@ var PORT = 3000;
 });*/
 //about page 
 // about us
-var middleware = {
-	reuireAuthencation : function(req, res, next) {
-		console.log('private route hit !');
-		next();
-	},
-	logger: function (req, res, next){
 
-		console.log('request'+new Date().toString()+' '+req.method+'  '+req.originalUrl);
-		next();
-	}
-};
+var middleware = require('./middleware.js');
+
 
 app.use(middleware.logger);
 //app.use(middleware.reuireAuthencation);
